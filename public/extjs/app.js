@@ -10,8 +10,8 @@ Ext.application({
         // 'Ext.MessageBox'
     ],
 
-    launch: function () {
-        Ext.Msg.alert('Hello Ext JS', 'Hello! Welcome to Ext JS.');
-    }
+    // launch: function () {
+    //     Ext.Msg.alert('Hello Ext JS', 'Hello! Welcome to Ext JS.');
+    // }
 });
 

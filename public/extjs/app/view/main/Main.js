@@ -1,75 +1,98 @@
 Ext.define('MyApp.view.main.Main', {
     extend: 'Ext.tab.Panel',
-    fullscreen: true,
-    tabBarPosition: 'top',
-    cls: 'main',   // <<== added
-
-    controller: 'main',   // <<== added
-
-    store: {
-        type: 'notifications'
-    },
+    xtype: 'app-main',
 
     requires: [
-        'Ext.Button',
-        'Ext.field.Text',
+        // 'Ext.plugin.Viewport',
+        'Ext.MessageBox',
 
-        'MyApp.view.main.MainController',  // <<== added
-        'MyApp.view.notify.Notifications',  // <<== added
+        'MyApp.view.main.MainController',
+        'MyApp.view.main.MainModel',
+        'MyApp.view.main.List'
     ],
 
-    viewModel: {   // <<== added
-        data: {
-            userName: ''
+    controller: 'main',
+    viewModel: 'main',
+
+    ui: 'navigation',
+
+    // tabBarPosition: "left",
+    // tabBarHeaderPosition: 1,
+    // titleRotation: 0,
+    // tabRotation: 0,
+
+    header: {
+        layout: {
+            align: 'stretchmax'
+        },
+        title: {
+            bind: {
+                text: '{name}'
+            },
+            flex: 0
+        },
+        iconCls: 'fa-th-list'
+    },
+
+    tabBar: {
+        flex: 1,
+        layout: {
+            align: 'stretch',
+            overflowHandler: 'none'
+        }
+    },
+
+    // responsiveConfig: {
+    //     tall: {
+    //         headerPosition: 'top'
+    //     },
+    //     wide: {
+    //         headerPosition: 'left'
+    //     }
+    // },
+
+    defaults: {
+        bodyPadding: 20,
+        tabConfig: {
+            plugins: 'responsive',
+            responsiveConfig: {
+                wide: {
+                    iconAlign: 'left',
+                    textAlign: 'left'
+                },
+                tall: {
+                    iconAlign: 'top',
+                    textAlign: 'center',
+                    width: 120
+                }
+            }
         }
     },
 
     items: [{
         title: 'Home',
-        cls: 'home',   // <<== added
-        html: '<h1 class="banner">Hello World!</h1><hr>',
-        style: {
-            'align-items': 'center',
-            'background': '#94D2BD',
-        },
+        // iconCls: 'fa-home',
+        // The following grid shares a store with the classic version's grid as well!
         items: [{
-            xtype: 'textfield',  // <<== added
-            label: 'User name',
-            bind: '{userName}',
-
-            listeners: {   // <<== added
-                action: 'onGo'
-            }
-        }, {
-            xtype: 'button',
-            text: 'Go',
-            handler: 'onGo',  // <<== added
-            bind: {             // <<== added
-                disabled: '{!userName}',
-                text: '{userName ? "Save: " + userName : "Save"}'
-            }
+            xtype: 'mainlist'
         }]
     }, {
-        title: 'Notifications',
-        xtype: 'notifications',  // <<== add to main view
-
-        // items: [{
-        //     xtype: 'button',
-        //     text: 'Hehe boy',
-        //     handler: 'onItemSelected'  // <<== added
-        // }]
+        title: 'Users',
+        // iconCls: 'fa-user',
+        bind: {
+            html: '{loremIpsum}'
+        }
+    }, {
+        title: 'Groups',
+        // iconCls: 'fa-users',
+        bind: {
+            html: '{loremIpsum}'
+        }
     }, {
         title: 'Settings',
-        cls: 'settings',   // <<== added
-        html: '<h1 class="settings-banner">Hello World!</h1>',
-        style: {
-            'align-items': 'center',
-            'background': '#BB3E03',
-        },
-        items: [{
-            xtype: 'button',
-            text: 'Hehe boy',
-            handler: 'onGo'  // <<== added
-        }]
+        // iconCls: 'fa-cog',
+        bind: {
+            html: '{loremIpsum}'
+        }
     }]
 });

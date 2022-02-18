@@ -4,7 +4,7 @@ Ext.define('MyApp.Application', {
     mainView: 'MyApp.view.main.Main',
 
     stores: [   // <<== added
-        'Users', // TODO: add global / shared stores here
+        // TODO: add global / shared stores here
     ],
 
     launch: function () {   // <<== added

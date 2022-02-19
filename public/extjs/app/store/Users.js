@@ -3,9 +3,9 @@ Ext.define('MyApp.store.Users', {
     alias: 'store.users',
     model: 'MyApp.model.User',
     data : [
-        {firstName: 'Seth', age: '34'},
-        {firstName: 'Scott', age: '72'},
-        {firstName: 'Gary', age: '19'},
-        {firstName: 'Capybara', age: '208'}
+        {name: 'Seth', age: '34'},
+        {name: 'Scott', age: '72'},
+        {name: 'Gary', age: '19'},
+        {name: 'Capybara', age: '208'}
     ]
 });

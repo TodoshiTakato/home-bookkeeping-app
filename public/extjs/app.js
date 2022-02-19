@@ -4,7 +4,7 @@
 Ext.application({
     name: 'MyApp',
     extend: 'MyApp.Application',  // <<== added
-
+    // scrollable: true,
     requires: [
         'MyApp.*'   // tell Cmd to include all app classes  // <<== added
         // 'Ext.MessageBox'

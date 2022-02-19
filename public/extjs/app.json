@@ -17,6 +17,7 @@
      */
     "requires": [
         "font-awesome",
+        "font-pictos",
         "ux"
     ],
 

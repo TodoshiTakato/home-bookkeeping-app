@@ -1,14 +1,14 @@
 /**
- * Tab Panels are a great way to allow the user to switch between several 
+ * Tab Panels are a great way to allow the user to switch between several
  * pages that are all full screen. Each
- * Component in the Tab Panel gets its own Tab, which shows the Component when tapped on. 
- * Tabs can be positioned at the top or the bottom of the Tab Panel, 
- * and can optionally accept title and icon configurations 
+ * Component in the Tab Panel gets its own Tab, which shows the Component when tapped on.
+ * Tabs can be positioned at the top or the bottom of the Tab Panel,
+ * and can optionally accept title and icon configurations
  * (see {@link Ext.Button#iconCls iconCls} for additional information).
  *
  * Here's how we can set up a simple Tab Panel with tabs at the bottom.
  * Use the controls at the top left of the example
- * to toggle between code mode and live preview mode 
+ * to toggle between code mode and live preview mode
  * (you can also edit the code and see your changes in the live
  * preview):
  *
@@ -32,8 +32,8 @@
  *     ]
  * });
  * ```
- * One tab was created for each of the {@link Ext.Panel panels} defined in the items array. 
- * Each tab automatically uses the title and icon defined on the item configuration, 
+ * One tab was created for each of the {@link Ext.Panel panels} defined in the items array.
+ * Each tab automatically uses the title and icon defined on the item configuration,
  * and switches to that item when tapped on. We can also position
  * the tab bar at the top, which makes our Tab Panel look like this:
  *
@@ -54,7 +54,7 @@
  *     ]
  * });
  * ```
- * 
+ *
  * ```html
  * @example({framework: 'ext-web-components', packages:['ext-web-components'], tab: 1 })
  *  <ext-tabpanel
@@ -87,7 +87,7 @@
  * @example({framework: 'ext-web-components', tab: 2, packages: ['ext-web-components']})
  * import '@sencha/ext-web-components/dist/ext-container.component';
  * import '@sencha/ext-web-components/dist/ext-tabpanel.component';
- *  
+ *
  * export default class PanelComponent {}
  * ```
  * ```javascript
@@ -158,8 +158,8 @@ Ext.define('Ext.tab.Panel', {
 
         /**
          * @cfg {Boolean} autoOrientAnimation
-         * Determines whether the slide animation should be automatically oriented depending on the 
-         * TabBar position. When position is 'top' or 'bottom' it will slide left and when 
+         * Determines whether the slide animation should be automatically oriented depending on the
+         * TabBar position. When position is 'top' or 'bottom' it will slide left and when
          * position is 'left' or 'right' it will slide up
          * @accessor
          */
